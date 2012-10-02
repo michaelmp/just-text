@@ -1,0 +1,42 @@
+.jt-body {
+  margin: 2em auto;
+  width: 30em;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  font-size: larger;
+  color: #333;
+}
+
+.jt-pre {
+  white-space: pre;
+  font-family: monospace;
+  padding: 0 0.5em;
+}
+
+.jt-h1 { font-size: 300%; }
+.jt-h2 { font-size: 200%; }
+.jt-h3 { font-size: 150%; }
+.jt-h4 { font-size: 140%; }
+.jt-h5 { font-size: 130%; }
+.jt-h6 { font-size: 125%; }
+.jt-h7 { font-size: 120%; }
+.jt-h8 { font-size: 110%; }
+.jt-h9 { font-size: 100%; }
+
+.jt-h1, .jt-h2, .jt-h3, .jt-h4, .jt-h5, .jt-h6, .jt-h7, .jt-h8, .jt-h9 {
+  margin: 1em 0 0.25em 0;
+}
+
+.jt-p {
+  line-height: 1.5;
+  letter-spacing: 0;
+  word-spacing: 0;
+  text-align: justify;
+}
+
+.jt-p {
+  text-indent: 0;
+}
+
+.jt-p + .jt-p {
+  text-indent: 2em;
+}
