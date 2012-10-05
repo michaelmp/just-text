@@ -11,9 +11,9 @@ CSS_INLINE = open('jt.css', 'r').read()
 # Order matters.
 RULES = [
   remark.Rule,
-  header.Rule,
   verbatim.Rule,
   paragraph.Rule,
+  header.Rule,
 ]
 
 def header(args = {}):
@@ -25,12 +25,12 @@ def header(args = {}):
 def footer(args = {}):
   return TEMPLATE_HTML_FOOTER
 
-def usage():
-  return 'USAGE: ./jt.py file.txt > file.html'
+def usage(args = {}):
+  return 'USAGE: %s in.txt > out.html' % args['cmd']
 
 if __name__ == '__main__':
   if len(sys.argv) < 2:
-    print(usage())
+    print(usage({'cmd': sys.argv[0]}))
   else:
     f = open(sys.argv[1], 'r')
     print(header({'title': sys.argv[1]}))
