@@ -1,9 +1,9 @@
-@import url(http://fonts.googleapis.com/css?family=Buenard);
+@import url(http://fonts.googleapis.com/css?family=Cardo:400,400italic,700);
 
 .jt-body {
   margin: 2em auto;
   width: 30em;
-  font-family: "Buenard", Georgia, "Times New Roman", Times, serif;
+  font-family: "Cardo", Georgia, "Times New Roman", Times, serif;
   font-size: larger;
   color: #333;
   background-color: white;
