@@ -10,3 +10,4 @@ Goals:
 * Generate screen and print-quality HTML documents with CSS.
 * Support for pagination, page breaks.
 * Readability.
+* Inline HTML for everything else.
