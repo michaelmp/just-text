@@ -6,19 +6,21 @@ from rules import *
 
 TEMPLATE_HTML_HEADER = open('template/header.html', 'r').read()
 TEMPLATE_HTML_FOOTER = open('template/footer.html', 'r').read()
-CSS_INLINE = open('jt.css', 'r').read()
+CSS_INLINE = open('css/jt.css', 'r').read()
+CSS_SCREEN = open('css/screen.css', 'r').read()
+CSS_PRINT = open('css/print.css', 'r').read()
 
 # Order matters.
 RULES = [
-  remark.Rule,
-  verbatim.Rule,
+  #verbatim.Rule,
   paragraph.Rule,
   header.Rule,
+  remark.Rule,
 ]
 
 def header(args = {}):
   template = TEMPLATE_HTML_HEADER
-  template = template.replace('%{css}', CSS_INLINE)
+  template = template.replace('%{css}', CSS_INLINE + CSS_SCREEN + CSS_PRINT)
   template = template.replace('%{title}', args['title'])
   return template
 

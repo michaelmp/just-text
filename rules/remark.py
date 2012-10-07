@@ -1,9 +1,11 @@
+# TODO: Remove empty lines from output.
+
 class Rule:
   @classmethod
   def visit_line(cls, line):
-    if len(line.strip()) < 2:
-      return line
-    elif line.strip()[0:2] == '--':
+    if len(line.strip()) < 1:
+      return ''
+    elif line.strip()[0] == '#':
       return ''
     else:
       return line
