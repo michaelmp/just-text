@@ -2,6 +2,11 @@
 
 @media print {
 
+  .jt-body {
+    font-size: 12pt;
+    color: black;
+  }
+
   .jt-h1, .jt-title {
     page-break-before: right;
   }

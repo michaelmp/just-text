@@ -8,26 +8,8 @@
     background-color: white;
   }
 
-  .jt-pre {
-    white-space: pre;
-    font-family: monospace;
-    padding: 0 0.5em;
-  }
-
-
-  .jt-p {
-    line-height: 1.5;
-    letter-spacing: 0;
-    word-spacing: 0;
-    text-align: justify;
-  }
-
-  .jt-p {
-    text-indent: 0;
-  }
-
-  .jt-p + .jt-p {
-    text-indent: 2em;
+  .jt-pagebreak {
+    margin-top: 10em;
   }
 
 }
