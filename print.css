@@ -1,0 +1,25 @@
+/* Style for printers. */
+
+@media print {
+
+  .jt-h1, .jt-title {
+    page-break-before: right;
+  }
+  .jt-h2, .jt-chapter {
+    page-break-before: always;
+  }
+  .jt-pagebreak {
+    page-break-after: always;
+  }
+
+  @page {
+    margin: 3cm 6cm;
+  }
+
+  @page :left {
+  }
+
+  @page :right {
+  }
+
+}

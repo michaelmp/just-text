@@ -4,41 +4,21 @@
   margin: 2em auto;
   width: 30em;
   font-family: "Cardo", Georgia, "Times New Roman", Times, serif;
-  font-size: larger;
-  color: #333;
-  background-color: white;
 }
 
-.jt-pre {
-  white-space: pre;
-  font-family: monospace;
-  padding: 0 0.5em;
-}
+.jt-h1, .jt-title { font-size: 300%; }
+.jt-h2, .jt-chapter { font-size: 200%; }
+.jt-h3, .jt-section { font-size: 140%; }
+.jt-h4, .jt-subsection { font-size: 120%; }
+.jt-h5, .jt-subsubsection { font-size: 100%; }
 
-.jt-h1 { font-size: 300%; }
-.jt-h2 { font-size: 200%; }
-.jt-h3 { font-size: 140%; }
-.jt-h4 { font-size: 120%; }
-.jt-h5 { font-size: 100%; }
-
-.jt-h1, .jt-h2, .jt-h3, .jt-h4, .jt-h5 {
+.jt-h1, .jt-title,
+.jt-h2, .jt-chapter,
+.jt-h3, .jt-section,
+.jt-h4, .jt-subsection,
+.jt-h5, .jt-subsubsection {
   font-family: "Times New Roman", Times, serif;
   margin: 2em 0 0.5em 0;
   text-align: center;
   text-shadow: 1px 1px 2px #ccc
-}
-
-.jt-p {
-  line-height: 1.5;
-  letter-spacing: 0;
-  word-spacing: 0;
-  text-align: justify;
-}
-
-.jt-p {
-  text-indent: 0;
-}
-
-.jt-p + .jt-p {
-  text-indent: 2em;
 }
