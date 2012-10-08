@@ -16,6 +16,7 @@ RULES = [
   header.Rule,
   environment.Rule,
   remark.Rule,
+  substitute.Rule,
 ]
 
 def header():

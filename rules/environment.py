@@ -16,7 +16,7 @@ class Rule:
     global VARIABLES
     match = re.match(pattern, line)
     if match and match.group(1):
-      VARIABLES[match.group(1)] = match.group(2)
+      VARIABLES[match.group(1).strip()] = match.group(2).strip()
       return ''
     else:
       return line

@@ -4,7 +4,7 @@
 
 import re
 
-pattern = r'# .*'
+pattern = r'#.*'
 
 class Rule:
 
