@@ -1,11 +1,17 @@
 # TODO: Remove empty lines from output.
+#
+# "# This is a comment."
+
+
+import re
+
+pattern = r'# .*'
 
 class Rule:
+
   @classmethod
   def visit_line(cls, line):
-    if len(line.strip()) < 1:
-      return ''
-    elif line.strip()[0] == '#':
+    if re.match(pattern, line):
       return ''
     else:
       return line

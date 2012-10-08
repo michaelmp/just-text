@@ -1,1 +1,7 @@
-__all__ = ['header', 'paragraph', 'remark', 'verbatim']
+__all__ = [
+  'environment',
+  'header',
+  'paragraph',
+  'remark',
+  'verbatim',
+]

@@ -15,16 +15,22 @@ RULES = [
   #verbatim.Rule,
   paragraph.Rule,
   header.Rule,
+  environment.Rule,
   remark.Rule,
 ]
 
-def header(args = {}):
+ENVIRONMENT = {
+  'title': 'Untitled',
+  'author': 'Anonymous',
+}
+
+def header():
   template = TEMPLATE_HTML_HEADER
   template = template.replace('%{css}', CSS_INLINE + CSS_SCREEN + CSS_PRINT)
-  template = template.replace('%{title}', args['title'])
+  template = template.replace('%{title}', ENVIRONMENT['title'])
   return template
 
-def footer(args = {}):
+def footer():
   return TEMPLATE_HTML_FOOTER
 
 def usage(args = {}):
@@ -34,10 +40,13 @@ if __name__ == '__main__':
   if len(sys.argv) < 2:
     print(usage({'cmd': sys.argv[0]}))
   else:
+    ENVIRONMENT['title'] = sys.argv[1]
+
     f = open(sys.argv[1], 'r')
-    print(header({'title': sys.argv[1]}))
     formatted = f.read()
     for rule in RULES:
       formatted = rule.visit(formatted)
+
+    print(header())
     print(formatted)
     print(footer())
