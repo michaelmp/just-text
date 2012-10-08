@@ -12,7 +12,6 @@ CSS_PRINT = open('css/print.css', 'r').read()
 
 # Order matters.
 RULES = [
-  #verbatim.Rule,
   paragraph.Rule,
   header.Rule,
   environment.Rule,
