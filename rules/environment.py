@@ -1,4 +1,4 @@
-# "#:field: value" --> ENVIRONMENT[field] = value
+# "#:field: value" --> VARIABLES[field] = value
 
 import re
 
