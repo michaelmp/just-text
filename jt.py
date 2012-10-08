@@ -29,19 +29,15 @@ def footer():
   return TEMPLATE_HTML_FOOTER
 
 def usage(args = {}):
-  return 'USAGE: %s in.txt > out.html' % args['cmd']
+  return 'USAGE: %s < in.txt > out.html' % args['cmd']
 
 if __name__ == '__main__':
-  if len(sys.argv) < 2:
-    print(usage({'cmd': sys.argv[0]}))
-  else:
-    environment.VARIABLES['title'] = sys.argv[1]
-
-    f = open(sys.argv[1], 'r')
-    formatted = f.read()
-    for rule in RULES:
-      formatted = rule.visit(formatted)
-
-    print(header())
-    print(formatted)
-    print(footer())
+    formatted = sys.stdin.read()
+    if len(formatted) < 1:
+      print(usage({'cmd': sys.argv[0]}))
+    else:
+      for rule in RULES:
+        formatted = rule.visit(formatted)
+      print(header())
+      print(formatted)
+      print(footer())
