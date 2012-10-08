@@ -23,7 +23,7 @@ Overview:
 #:title: A Tale of Two Cities
 #:author: Charles Dickens
 
-#- {title}
+#- {title}, by {author}
 
 #-- Chapter 1
 
