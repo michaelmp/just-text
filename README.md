@@ -14,5 +14,5 @@ Goals:
 
 Usage:
 ```sh
-$ ./jt.py in.txt > out.html
+$ ./jt.py < in.txt > out.html
 ```
