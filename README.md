@@ -25,7 +25,9 @@ Overview:
 
 #- {title}, by {author}
 
-#-- Chapter 1
+#-- Part One: Restored to Life
+
+#--- Chapter 1
 
 It was the best of times, it was the worst of times.
 It was the age of wisdom, it was the age of foolishness.
