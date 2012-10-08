@@ -19,15 +19,11 @@ RULES = [
   remark.Rule,
 ]
 
-ENVIRONMENT = {
-  'title': 'Untitled',
-  'author': 'Anonymous',
-}
-
 def header():
+  env = environment.VARIABLES
   template = TEMPLATE_HTML_HEADER
   template = template.replace('%{css}', CSS_INLINE + CSS_SCREEN + CSS_PRINT)
-  template = template.replace('%{title}', ENVIRONMENT['title'])
+  template = template.replace('%{title}', env['title'])
   return template
 
 def footer():
@@ -40,7 +36,7 @@ if __name__ == '__main__':
   if len(sys.argv) < 2:
     print(usage({'cmd': sys.argv[0]}))
   else:
-    ENVIRONMENT['title'] = sys.argv[1]
+    environment.VARIABLES['title'] = sys.argv[1]
 
     f = open(sys.argv[1], 'r')
     formatted = f.read()

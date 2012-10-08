@@ -2,7 +2,6 @@
 #
 # "# This is a comment."
 
-
 import re
 
 pattern = r'# .*'
