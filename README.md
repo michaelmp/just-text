@@ -11,3 +11,8 @@ Goals:
 * Support for pagination, page breaks.
 * Readability.
 * Inline HTML for everything else.
+
+Usage:
+```sh
+$ ./jt.py < in.txt > out.html
+```
