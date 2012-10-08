@@ -23,7 +23,7 @@ def header():
   env = environment.VARIABLES
   template = TEMPLATE_HTML_HEADER
   template = template.replace('%{css}', CSS_INLINE + CSS_SCREEN + CSS_PRINT)
-  template = template.replace('%{title}', env['title'])
+  template = template.replace('%{title}', '%s, by %s' % (env['title'], env['author']))
   return template
 
 def footer():

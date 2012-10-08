@@ -1,9 +1,10 @@
-@import url(http://fonts.googleapis.com/css?family=Cardo:400,400italic,700);
+@import url(http://fonts.googleapis.com/css?family=Vollkorn:400,400italic,700,700italic);
+@import url(http://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
 
 .jt-body {
   margin: 2em auto;
   width: 30em;
-  font-family: "Cardo", Georgia, "Times New Roman", Times, serif;
+  font-family: "Lora", Georgia, "Times New Roman", Times, serif;
 }
 
 .jt-h1, .jt-title { font-size: 300%; }
@@ -17,10 +18,9 @@
 .jt-h3, .jt-section,
 .jt-h4, .jt-subsection,
 .jt-h5, .jt-subsubsection {
-  font-family: "Times New Roman", Times, serif;
+  font-family: "Vollkorn", "Times New Roman", Times, serif;
   margin: 2em 0 0.5em 0;
   text-align: center;
-  text-shadow: 1px 1px 2px #ccc
 }
 
 .jt-pre {
