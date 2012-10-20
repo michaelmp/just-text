@@ -33,3 +33,5 @@
 !brobdignagian: !font-size 300% *
 
 !linebreak: <br/>
+
+!link: <a href=" @~ ">_*</a>
