@@ -43,3 +43,7 @@
 .jt-p + .jt-p {
   text-indent: 2em;
 }
+
+.jt-box {
+  margin: 1em 3em;
+}

@@ -34,4 +34,6 @@
 
 !linebreak: <br/>
 
-!link: <a href=" @~ ">_*</a>
+!link: <a href=" @~ "> _* </a>
+
+!box: <div class="jt-box"> * </div>
