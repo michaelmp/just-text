@@ -1,8 +1,8 @@
 # Destructures arguments based on ascii-art regex!!!
 #
-# @ => (\w+)
-# _@ => \w+ (\w+)
-# __@ => \w+ \w+ (\w+)
+# @ => (word)
+# _@ => word (word)
+# __@ => word word (word)
 
 import re
 
@@ -10,9 +10,9 @@ from expression import *
 
 def destructure(symbol):
   if symbol == '@':
-    return '(\w+)'
+    return '([\S]+)'
   if symbol == '_':
-    return '\w+'
+    return '[\S]+'
   if symbol == '~':
     return '.*'
   if symbol == '*':

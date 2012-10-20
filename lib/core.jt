@@ -10,3 +10,26 @@
 !chapter: {!--- Chapter @~} {!----- _*}
 !section: !---- *
 !subsection: !----- *
+
+!strong: <strong> * </strong>
+!important: !strong *
+!heavy: !strong *
+!boldface: !strong *
+!boldfaced: !strong *
+!bold: !strong *
+!bf: !strong *
+!b: !strong *
+
+!style: <span style=" @~ : _@~ "> __* </span>
+!font-size: !style font-size @~ _*
+
+!liliputian: !font-size 20% *
+!tiny: !font-size 50% *
+!small: !font-size 80% *
+!normal: !font-size 100% *
+!large: !font-size 120% *
+!huge: !font-size 150% *
+!colossal: !font-size 200% *
+!brobdignagian: !font-size 300% *
+
+!linebreak: <br/>
