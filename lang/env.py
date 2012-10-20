@@ -1,17 +1,20 @@
 class Environment:
-  def __init__(self, parent):
+  def __init__(self, parent, context):
     self.parent = parent
-    self.env = {}
+    self.env = {
+      '__context__': context,
+    }
 
   def bind(self, word, val):
     self.env[word] = val
 
-  def lookup(self, word, context):
+  def lookup(self, word):
     if word in self.env.keys():
-      if type(word) == type(lambda:0):
-        return word()
-      elif type(word) == str:
-        return self.env[word]
+      answer = self.env[word]
+      if type(answer) == type(lambda:0):
+        return answer()
+      elif type(answer) == str:
+        return answer
       else:
         raise 'Unexpected construct!'
     else:

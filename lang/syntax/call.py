@@ -1,3 +1,4 @@
+from .. import env
 from expression import *
 
 class Call(Expression):
@@ -5,4 +6,7 @@ class Call(Expression):
     self.name = name
     self.context = context
   def evaluate(self, ev):
-    return ev.env.lookup(self.name, ev.scan(self.context))
+    ev.push(ev.evaluate(ev.scan(self.context)))
+    out = ev.env.lookup(self.name)
+    ev.pop()
+    return out

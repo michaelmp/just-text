@@ -1,10 +1,10 @@
 from expression import *
 
 class Definition(Expression):
-  def __init__(self, name, context):
+  def __init__(self, name, definition):
     self.name = name
-    self.context = context
+    self.definition = definition
   def evaluate(self, ev):
-    value = lambda: ev.evaluate(ev.scan(self.context))
-    evaluator.env.bind(self.name, value)
+    value = lambda: ev.evaluate(ev.scan(self.definition))
+    ev.env.bind(self.name, value)
     return ''

@@ -1,7 +1,7 @@
 from expression import *
 
-class Tree(Expression):
+class Sentence(Expression):
   def __init__(self, args):
     self.expressions = args
   def evaluate(self, ev):
-    return '\n'.join([ev.evaluate(exp) for exp in self.expressions])
+    return ' '.join([ev.evaluate(exp) for exp in self.expressions])
