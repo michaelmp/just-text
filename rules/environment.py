@@ -1,8 +1,12 @@
-# "#:field: value" --> ENVIRONMENT[field] = value
+# Usage:
+#
+# !:field: value
+#
+# {field} => value
 
 import re
 
-pattern = r'#:(\w+):(.*)'
+pattern = r'!(\w+):(.*)'
 
 VARIABLES = {
   'title': 'Untitled',

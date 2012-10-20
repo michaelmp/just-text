@@ -1,7 +1,9 @@
+# Convert all lines that aren't commands (!)
+
 import re
 
 first_p = True
-regex_skip = r'[\#].*'
+regex_skip = r'^((\!.*)|(\#.*))'
 
 class Rule:
   @classmethod

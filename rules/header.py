@@ -1,30 +1,27 @@
+# Usage:
+#
+# !- Title
+# !-- Part I
+# !--- Chapter 1
+# !---- ...
+
+import re
+
+pattern = r'^!([\-]+)(.*)'
+element = '<div class="%s">%s</div>'
+base_class = 'jt-h'
+
 class Rule:
   @classmethod
-  def inc_header(cls, line, times):
-    if len(line) == 0:
-      return line
-    elif line[0] == '-':
-      return Rule.inc_header(line[1:], times + 1)
-    else:
-      if times > 0:
-        css_class = 'jt-h' + str(times)
-        return '<div class="%s">%s</div>' % (css_class, line.strip())
-      else:
-        return line
-
-  @classmethod
-  def match_header(cls, line):
-    if len(line) < 2:
-      return line
-    elif line[0:2] == "#-":
-      return Rule.inc_header(line[1:], 0)
-    else:
-      return line
-
-  @classmethod
   def visit_line(cls, line):
-    return Rule.match_header(line)
+    match = re.match(pattern, line)
+    if match:
+      level = len(match.group(1))
+      text = match.group(2)
+      return element % (base_class+str(level), text)
+    else:
+      return line
 
   @classmethod
   def visit(cls, text):
-    return "\n".join([Rule.visit_line(line) for line in text.split("\n")])
+    return '\n'.join([Rule.visit_line(line) for line in text.split('\n')])

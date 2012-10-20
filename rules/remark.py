@@ -1,6 +1,7 @@
 # TODO: Remove empty lines from output.
+# Usage:
 #
-# "# This is a comment."
+# # This is a comment that will not be in the output.
 
 import re
 
