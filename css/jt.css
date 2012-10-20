@@ -8,16 +8,16 @@
 }
 
 .jt-h1, .jt-title { font-size: 300%; }
-.jt-h2, .jt-chapter { font-size: 200%; }
-.jt-h3, .jt-section { font-size: 140%; }
-.jt-h4, .jt-subsection { font-size: 120%; }
-.jt-h5, .jt-subsubsection { font-size: 100%; }
+.jt-h2, .jt-part { font-size: 200%; }
+.jt-h3, .jt-chapter { font-size: 140%; }
+.jt-h4, .jt-section { font-size: 120%; }
+.jt-h5, .jt-subsection { font-size: 100%; }
 
 .jt-h1, .jt-title,
-.jt-h2, .jt-chapter,
-.jt-h3, .jt-section,
-.jt-h4, .jt-subsection,
-.jt-h5, .jt-subsubsection {
+.jt-h2, .jt-part,
+.jt-h3, .jt-chapter,
+.jt-h4, .jt-section,
+.jt-h5, .jt-subsection {
   font-family: "Vollkorn", "Times New Roman", Times, serif;
   margin: 2em 0 0.5em 0;
   text-align: center;

@@ -8,7 +8,7 @@ BLOCK_CALL = r'(.*){(.*)}(.*)' #TODO: balance workaround
 DEFINITION = r'^!([\w\-]+):( )*(.*)'
 CALL = r'!([\w\-]+)( )*(.*)'
 
-DEBUG = True
+DEBUG = False
 
 def depth(env, level):
   if env.parent:

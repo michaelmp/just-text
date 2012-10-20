@@ -1,5 +1,14 @@
-!-: <h1> * </h1>
-!--: <h2> * </h2>
-!---: <h3> * </h3>
-!----: <h4> * </h4>
-!strong: <strong> * </strong>
+!-: <div class="jt-h1 jt-title"> * </div>
+!title: !- *
+
+!--: <div class="jt-h2 jt-part"> * </div>
+!part: !-- *
+
+!---: <div class="jt-h3 jt-chapter"> * </div>
+!chapter: !--- *
+
+!----: <div class="jt-h4 jt-section"> * </div>
+!section: !---- *
+
+!-----: <div class="jt-h5 jt-subsection"> * </div>
+!subsection: !----- *
