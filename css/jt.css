@@ -23,10 +23,18 @@
   text-align: center;
 }
 
-.jt-pre {
+.jt-pre, .jt-code {
   white-space: pre;
   font-family: monospace;
-  padding: 0 0.5em;
+  padding: 0.5em 0.5em;
+  margin: 0.5em 0;
+}
+
+.jt-code {
+  border-width: 0.2em;
+  border-radius: 2px;
+  border-color: #ddd;
+  border-style: solid;
 }
 
 .jt-p {

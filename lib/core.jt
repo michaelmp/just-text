@@ -37,3 +37,6 @@
 !link: <a href=" @~ "> _* </a>
 
 !box: <div class="jt-box"> * </div>
+
+!pre: <div class="jt-pre"> * </div>
+!code: <div class="jt-code"> * </div>
