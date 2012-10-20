@@ -20,19 +20,16 @@ $ ./jt.py < in.txt > out.html
 Overview:
 
 ```
-#:title: A Tale of Two Cities
-#:author: Charles Dickens
+!title A Tale of Two Cities
+!author Charles Dickens
 
-#- {title}, by {author}
+!part 1 Recalled to Life
 
-#-- Part One: Restored to Life
-
-#--- Chapter 1
+!chapter 1 The Period
 
 It was the best of times, it was the worst of times.
 It was the age of wisdom, it was the age of foolishness.
 It was the epoch of belief, it was the epoch of incredulity.
 It was the season of light, it was the season of darkness.
 It was the spring of hope, it was the winter of despair.
-...
 ```

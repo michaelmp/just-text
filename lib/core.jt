@@ -1,14 +1,12 @@
-!-: <div class="jt-h1 jt-title"> * </div>
+!-: <div class="jt-h1"> * </div>
+!--: <div class="jt-h2"> * </div>
+!---: <div class="jt-h3"> * </div>
+!----: <div class="jt-h4"> * </div>
+!-----: <div class="jt-h5"> * </div>
+
 !title: !- *
-
-!--: <div class="jt-h2 jt-part"> * </div>
-!part: !-- *
-
-!---: <div class="jt-h3 jt-chapter"> * </div>
-!chapter: !--- *
-
-!----: <div class="jt-h4 jt-section"> * </div>
+!author: !--- by *
+!part: {!-- Part @~} {!---- _*}
+!chapter: {!--- Chapter @~} {!----- _*}
 !section: !---- *
-
-!-----: <div class="jt-h5 jt-subsection"> * </div>
 !subsection: !----- *
