@@ -1,3 +1,7 @@
+import sys
+
+from .. import error
+
 class Environment:
   def __init__(self, parent, context):
     self.parent = parent
@@ -6,7 +10,17 @@ class Environment:
     }
 
   def bind(self, word, val):
+    if self.isbound(word):
+      error.warning('"%s" is already defined' % word)
     self.env[word] = val
+
+  def isbound(self, word):
+    if word in self.env.keys():
+      return True
+    elif self.parent:
+      return self.parent.isbound(word)
+    else:
+      return False
 
   def lookup(self, word):
     if word in self.env.keys():
