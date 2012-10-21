@@ -9,7 +9,7 @@ def warning(msg):
   sys.stderr.write('[%s warning %s] %s\n' % (color_yellow, color_end, msg))
   sys.stderr.flush()
 
-def error(msg):
+def fail(msg):
   sys.stderr.write('[%s  error  %s] %s\n' % (color_red, color_end, msg))
   sys.stderr.flush()
 
