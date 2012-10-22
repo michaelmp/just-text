@@ -1,4 +1,4 @@
-DEBUG = True 
+DEBUG = False 
 
 def depth(env, level):
   if env.parent:

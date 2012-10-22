@@ -5,7 +5,6 @@ from env import *
 from syntax import *
 
 ARGS = r'^([~_@*]*)$'
-BLOCK_CALL = r'(.*){(.*)}(.*)' #TODO: balance workaround
 DEFINITION = r'^!([\w\-]+):( )*(.*)'
 CALL = r'!([\w\-]+)( )*(.*)'
 
@@ -31,9 +30,7 @@ class Evaluator:
     line = line.strip()
     grams = line.split(' ')
     for word in grams:
-      if len(word) < 1:
-        print("(%s):(%s)" % (line, word))
-      nested = False
+      nested = nest > 0
       if word[0] == '{':
         if nest == 0:
           word = word[1:]
@@ -77,16 +74,6 @@ class Evaluator:
       return call.Call(m.group(1), m.group(3))
 
     return self.tokenize_line(line)
-
-    #m = re.match(BLOCK_CALL, line)
-    #if m:
-    #  return sentence.Sentence([
-    #    self.scan(m.group(1)),
-    #    self.scan(m.group(2)),
-    #    self.scan(m.group(3)),
-    #  ])
-
-    #return sentence.Sentence([self.scan_word(word) for word in line.split()])
 
   def scan(self, context):
     return tree.Tree([self.scan_line(line) for line in context.splitlines()])
