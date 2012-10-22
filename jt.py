@@ -18,7 +18,12 @@ if __name__ == '__main__':
   error.okay('successfully compiled input')
   header = open('template/header.html').read()
   header = header.replace('%{title}', e.env.lookup('title'))
-  header = header.replace('%{css}', open('css/jt.css').read())
+  css = '\n'.join([open(f).read() for f in [
+    'css/jt.css',
+    'css/screen.css',
+    'css/print.css',
+  ]])
+  header = header.replace('%{css}', css)
   sys.stdout.write(header)
   sys.stdout.write(body)
   sys.stdout.write(open('template/footer.html').read())

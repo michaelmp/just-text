@@ -1,9 +1,16 @@
+!remark: {}
+!rem: !remark
+!comment: !remark
+!#: !remark
+
+!# HEADERS
 !-: <div class="jt-h1"> * </div>
 !--: <div class="jt-h2"> * </div>
 !---: <div class="jt-h3"> * </div>
 !----: <div class="jt-h4"> * </div>
 !-----: <div class="jt-h5"> * </div>
 
+!# SECTIONS
 !title: !- *
 !author: !--- by *
 !part: {!-- Part @~} {!---- _*}
@@ -11,6 +18,7 @@
 !section: !---- *
 !subsection: !----- *
 
+!# BOLDFACE
 !strong: <strong> * </strong>
 !important: !strong *
 !heavy: !strong *
@@ -20,9 +28,12 @@
 !bf: !strong *
 !b: !strong *
 
+!# INLINE CSS
 !style: <span style=" @~ : _@~ "> __* </span>
 !font-size: !style font-size @~ _*
+!color: !style color @~ _*
 
+!# FONTS
 !liliputian: !font-size 20% *
 !tiny: !font-size 50% *
 !small: !font-size 80% *
@@ -32,11 +43,18 @@
 !colossal: !font-size 200% *
 !brobdignagian: !font-size 300% *
 
-!linebreak: <br/>
-
 !link: <a href=" @~ "> _* </a>
 
+!# FORMATTING
 !box: <div class="jt-box"> * </div>
-
 !pre: <div class="jt-pre"> * </div>
 !code: <div class="jt-code"> * </div>
+!abstract: !box *
+!newline: <br/>
+!linebreak: <br/>
+!pagebreak: <div class="jt-pagebreak"></div>
+!hr: <hr/>
+
+!# REFERENCES
+!mark: <span id=" @~ "> _* </span>
+!ref: <a href="# @~ "> _* </a>
