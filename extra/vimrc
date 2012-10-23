@@ -1,0 +1,2 @@
+autocmd BufRead,BufNewFile *.jt set filetype=jt
+syntax on
