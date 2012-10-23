@@ -5,16 +5,16 @@ import sys
 from jt.lang.eval import *
 
 if __name__ == '__main__':
-  programs = [
-    open('lib/core.jt').read(),
+  sources = [
+    ('lib/core.jt', open('lib/core.jt').read()),
+    ('<stdin>', sys.stdin.read()),
   ]
-  programs.append(sys.stdin.read())
-  error.okay('including core functions')
-  source = '\n'.join(programs)
   e = Evaluator()
-  scanned = e.scan(source)
+  program = tree.Tree([
+    e.scan_file(filename, source) for (filename, source) in sources
+  ])
   error.okay('successfully parsed input')
-  body = e.evaluate(e.scan(source))
+  body = e.evaluate(program)
   error.okay('successfully compiled input')
   header = open('template/header.html').read()
   header = header.replace('%{title}', e.env.lookup('title'))

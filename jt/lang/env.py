@@ -1,3 +1,4 @@
+import re
 import sys
 
 from .. import error
@@ -10,7 +11,7 @@ class Environment:
     }
 
   def bind(self, word, val):
-    if self.isbound(word):
+    if self.isbound(word) and not re.match(r'__\w+__', word):
       error.warning('"%s" is already defined' % word)
     self.env[word] = val
 
@@ -28,6 +29,8 @@ class Environment:
       if type(answer) == type(lambda:0):
         return answer()
       elif type(answer) == str:
+        return answer
+      elif type(answer) == int:
         return answer
       else:
         raise 'Unexpected construct!'
