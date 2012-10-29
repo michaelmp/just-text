@@ -5,6 +5,7 @@ __all__ = [
   'expression',
   'noop',
   'sentence',
+  'source',
   'tree',
   'words',
 ]

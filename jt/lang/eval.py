@@ -4,9 +4,10 @@ from .. import error
 from env import *
 from syntax import *
 
-ARGS = r'^([~_@*]*)$'
-DEFINITION = r'^!([\w\-]+):( )*(.*)'
+ARGS = r'^([~_@*]*[@*]+[~_@*]*)$'
+DEFINITION = r'^!([\w\-]+)( )*::( )*(.*)'
 CALL = r'!([\w\-]+)( )*(.*)'
+QUICK_CALL = r'!([\w\-]+)'
 COMMENT = r'! .*'
 
 class Evaluator:
@@ -29,7 +30,7 @@ class Evaluator:
       error.fail('"%s" at %s:%s :: "%s"' % \
         (e, filename, line, expression))
 
-  # foo {a{b}c} bar {baz} => [foo {a{b}c} bar {baz}]
+  # foo {a{b}c} bar {baz} => [foo scan(a{b}c) bar scan(baz)]
   def tokenize_line(self, line):
     out = []
     block = []
@@ -55,7 +56,7 @@ class Evaluator:
           out.append(self.scan_word(word))
       if nest == 0:
         if len(block) > 0:
-          out.append(self.scan_line(' '.join(block)))
+          out.append(self.scan(' '.join(block)))
           nest = 0
           block = []
     if nest != 0:
@@ -66,25 +67,27 @@ class Evaluator:
     m = re.match(ARGS, word)
     if m:
       return args.Args(m.group(1))
-
-    return words.Words(word)
+    out = []
+    for subword in re.split(QUICK_CALL, word):
+      m = re.match(QUICK_CALL, subword)
+      if m:
+        out.append(call.Call(m.group(1), ''))
+      else:
+        out.append(words.Words(subword))
+    return sentence.Sentence(out)
 
   def scan_line(self, line):
     if len(line) == 0:
       return noop.NoOp()
-
     m = re.match(COMMENT, line)
     if m:
       return words.Words('')
-
     m = re.match(DEFINITION, line)
     if m:
-      return definition.Definition(m.group(1), m.group(3))
-
+      return definition.Definition(m.group(1), m.group(4))
     m = re.match(CALL, line)
     if m:
       return call.Call(m.group(1), m.group(3))
-
     return self.tokenize_line(line)
 
   def scan(self, context):
@@ -92,18 +95,17 @@ class Evaluator:
     for line in context.splitlines():
       self.env.bind('__line__', 1 + self.env.lookup('__line__'))
       scanned = self.scan_line(line)
-      if scanned == None:
-        print(line)
       out.append(self.scan_line(line))
     return tree.Tree(out)
 
   def scan_file(self, filename, source):
-    try:
+    #try:
       error.info('Loading %s' % filename)
       self.env.bind('__filename__', filename)
       self.env.bind('__line__', 0)
+      source = ' '.join(['{ '+line+' } {!atline}' for line in source.splitlines()])
       return self.scan(source)
-    except Exception, e:
-      line = self.env.lookup('__line__')
-      error.fail('"%s" at %s:%s :: "%s"' % \
-        (e, filename, line, source.splitlines()[line - 1]))
+    #except Exception, e:
+    #  line = self.env.lookup('__line__')
+    #  error.fail('"%s" at %s:%s :: "%s"' % \
+    #    (e, filename, line, source.splitlines()[line - 1]))

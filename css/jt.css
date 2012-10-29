@@ -44,7 +44,11 @@
 .jt-h4, .jt-section,
 .jt-h5, .jt-subsection {
   font-family: Arial, Helvetica, sans-serif;
-  margin: 2em 0 0.5em 0;
+  margin: 4em 0 0.5em 0;
+}
+
+.jt-h1, .jt-title,
+.jt-h2, .jt-part {
   text-align: center;
 }
 
@@ -62,7 +66,7 @@
   border-style: solid;
 }
 
-.jt-p {
+body, .jt-p {
   line-height: 1.5;
   letter-spacing: 0;
   word-spacing: 0;

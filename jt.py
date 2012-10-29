@@ -10,14 +10,15 @@ if __name__ == '__main__':
     ('<stdin>', sys.stdin.read()),
   ]
   e = Evaluator()
-  program = tree.Tree([
+  program = source.Source([
     e.scan_file(filename, source) for (filename, source) in sources
   ])
+  sys.stderr.write(program.debug())
   error.okay('successfully parsed input')
   body = e.evaluate(program)
   error.okay('successfully compiled input')
   header = open('template/header.html').read()
-  header = header.replace('%{title}', e.env.lookup('title'))
+  header = header.replace('%{title}', e.env.lookup('--title--'))
   css = '\n'.join([open(f).read() for f in [
     'css/jt.css',
     'css/screen.css',

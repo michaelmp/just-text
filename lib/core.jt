@@ -1,62 +1,74 @@
+!atline ::
+
 ! HEADERS
-!-: <div class="jt-h1"> * </div>
-!--: <div class="jt-h2"> * </div>
-!---: <div class="jt-h3"> * </div>
-!----: <div class="jt-h4"> * </div>
-!-----: <div class="jt-h5"> * </div>
+!- :: <div class="jt-h1"> * </div>
+!-- :: <div class="jt-h2"> * </div>
+!--- :: <div class="jt-h3"> * </div>
+!---- :: <div class="jt-h4"> * </div>
+!----- :: <div class="jt-h5"> * </div>
 
 ! SECTIONS
-!title: !- *
-!author: !--- by *
-!part: !-- *
-!chapter: {!--- Chapter @~} {!----- _*}
-!section: !---- *
-!subsection: !----- *
+!title :: !- *
+!author :: !--- *
+!part :: !-- *
+
+!chapter :: {
+  !--- {
+    *
+  }
+}
+
+!section :: !---- *
+!subsection :: !----- *
 
 ! BOLDFACE
-!strong: <strong> * </strong>
-!important: !strong *
-!heavy: !strong *
-!boldface: !strong *
-!boldfaced: !strong *
-!bold: !strong *
-!bf: !strong *
-!b: !strong *
+!strong :: <strong> * </strong>
+!important :: !strong *
+!heavy :: !strong *
+!boldface :: !strong *
+!boldfaced :: !strong *
+!bold :: !strong *
+!bf :: !strong *
+!b :: !strong *
 
 ! ITALIC
-!italic: <span class="jt-italic"> * </span>
-!it: !italic *
+!italic :: <span class="jt-italic"> * </span>
+!it :: !italic *
 
 ! INLINE CSS
-!style: <span style=" @~ : _@~ "> __* </span>
-!font-size: !style font-size @~ _*
-!color: !style color @~ _*
+!style :: <span style=" @~  : _@~ "> __* </span>
+!font-size :: !style font-size @~ _*
+!color :: !style color @~ _*
 
 ! FONTS
-!liliputian: !font-size 20% *
-!tiny: !style font-size 50% *
-!small: !font-size 80% *
-!normal: !font-size 100% *
-!large: !font-size 120% *
-!huge: !font-size 150% *
-!colossal: !font-size 200% *
-!brobdignagian: !font-size 300% *
+!liliputian :: !font-size 50% *
+!tiny :: !style font-size 75% *
+!small :: !font-size 85% *
+!normal :: !font-size 100% *
+!large :: !font-size 120% *
+!huge :: !font-size 150% *
+!colossal :: !font-size 200% *
+!brobdignagian :: !font-size 300% *
 
-!link: <a href=" @~ "> _* </a>
+!link :: <a href=" @~ "> _* </a>
 
 ! FORMATTING
-!box: <div class="jt-box"> * </div>
-!pre: <div class="jt-pre"> * </div>
-!verbatim: !pre *
-!code: <div class="jt-code"> * </div>
-!abstract: !box *
-!center: <div class="jt-center"> * </div>
-!byline: !center {!small *}
-!newline: <br/>
-!linebreak: <br/>
-!pagebreak: <div class="jt-pagebreak"></div>
-!hr: <hr/>
+!box :: <div class="jt-box"> * </div>
+!pre :: <div class="jt-pre"> * </div>
+!verbatim :: !pre *
+!code :: <div class="jt-code"> * </div>
+!abstract :: !box *
+!center :: <div class="jt-center"> * </div>
+!byline :: !center {!small *}
+!newline :: <br/>
+!linebreak :: <br/>
+!pagebreak :: <div class="jt-pagebreak"></div>
+!hr :: <hr/>
 
-! REFERENCES
-!mark: <span id=" @~ "> _* </span>
-!ref: <a href=" @~ "> _* </a>
+! ESCAPED SYMBOLS
+!bang :: &#33; *
+!lcurl :: &#65371;
+!rcurl :: &#65373;
+!star :: &lowast;
+!at :: &#64;
+!tilde :: ~

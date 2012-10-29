@@ -12,7 +12,7 @@ class Environment:
 
   def bind(self, word, val):
     if self.isbound(word) and not re.match(r'__\w+__', word):
-      error.warning('"%s" is already defined' % word)
+      error.warning('"%s" is already defined.' % word)
     self.env[word] = val
 
   def isbound(self, word):
@@ -38,4 +38,5 @@ class Environment:
       if self.parent:
         return self.parent.lookup(word)
       else:
+        error.warning('"%s" is not defined.' % word)
         return word

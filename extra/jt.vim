@@ -11,7 +11,7 @@ syn case match
 
 syn region jtComment start=/^! / end=/$/
 syn match jtDef /\![a-zA-Z\-]\+:/
-syn match jtCommand /\![a-zA-Z\-]\+ /
+syn match jtCommand /\![a-zA-Z\-]\+/
 syn match jtArg /[\~\_\@\*]\+/
 
 highlight link jtComment Comment
