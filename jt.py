@@ -3,6 +3,8 @@
 import sys
 
 from jt.lang.eval import *
+from jt import error
+from jt.lang import debug
 
 if __name__ == '__main__':
   sources = [
@@ -11,9 +13,8 @@ if __name__ == '__main__':
   ]
   e = Evaluator()
   program = source.Source([
-    e.scan_file(filename, source) for (filename, source) in sources
+    e.scan(source) for (filename, source) in sources
   ])
-  sys.stderr.write(program.debug())
   error.okay('successfully parsed input')
   body = e.evaluate(program)
   error.okay('successfully compiled input')

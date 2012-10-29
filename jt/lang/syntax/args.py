@@ -25,9 +25,6 @@ class Args(Expression):
     pattern = ' '.join([destructure(s) for s in pattern])
     self.pattern = re.compile('^' + pattern + '$')
 
-  def debug(self):
-    sys.stderr.write('%s\n' % self.pattern)
-
   def evaluate(self, ev):
     try:
       return ' '.join(re.findall(self.pattern, ev.env.lookup('__context__')))
