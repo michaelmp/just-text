@@ -59,11 +59,12 @@
   margin: 0.5em 0;
 }
 
-.jt-code {
-  border-width: 0.2em;
-  border-radius: 2px;
-  border-color: #ddd;
-  border-style: solid;
+.jt-code, .jt-quote {
+  border-left: 3px solid #666;
+  background-color: #f2f5f6;
+  color: #666;
+  text-decoration: none;
+  padding: 1em;
 }
 
 body, .jt-p {
@@ -91,4 +92,8 @@ body, .jt-p {
 
 .jt-center {
   text-align: center;
+}
+
+.jt-author {
+  display: inline-block;
 }

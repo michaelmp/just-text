@@ -5,7 +5,25 @@
 !-----: <div class="jt-h5"> * </div>
 
 !title: !- *
-!author: !--- *
+
+!authors:
+  !box
+    !center
+      *
+
+!author:
+  <span class="jt-author">
+  !center *
+  </span>
+
+!name:
+  *
+  !linebreak
+
+!email:
+  <a href="mailto: * "> * </a>
+  !linebreak
+
 !part: !-- *
 
 !chapter:
@@ -25,7 +43,9 @@
 !b: !strong *
 
 !italic: <span class="jt-italic"> * </span>
+!italics: !italic *
 !it: !italic *
+!i: !italic *
 
 !style: <span style=" @~  : _@~ "> __* </span>
 !font-size: !style font-size @~ _*
@@ -42,16 +62,29 @@
 
 !link: <a href=" @~ "> _* </a>
 
-!box: <div class="jt-box"> * </div>
 !pre: <div class="jt-pre"> * </div>
 !verbatim: !pre *
-!code: <div class="jt-code"> * </div>
-!abstract: !box *
+
+!box: <div class="jt-box"> * </div>
+
+!code:
+  !box
+    <div class="jt-code"> * </div>
+
+!quote:
+  !box
+    <div class="jt-quote"> * </div>
+
+!abstract:
+  !linebreak
+  !linebreak
+  !box
+    !strong Abstract.
+    !small *
+
 !center: <div class="jt-center"> * </div>
-!byline: !center {!small *}
-!newline: <br/>
 !linebreak: <br/>
-!pagebreak: <div class="jt-pagebreak"></div>
+!pagebreak: <div class="jt-pagebreak"></div> *
 !hr: <hr/>
 
 !bang: &#33; *
@@ -60,3 +93,17 @@
 !star: &lowast;
 !at: &#64;
 !tilde: ~
+!lt: &lt;
+!gt: &gt;
+
+!list: <ul> * </ul>
+!enumerate: <ol> * </ol>
+
+!bullet: !list *
+!bullets: !list *
+!bulleted: !list *
+
+!count: !enumerate *
+
+!item: <li> * </li>
+
