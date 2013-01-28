@@ -3,6 +3,7 @@
 @media screen {
 
   .jt-body {
+    width: 35em;
     font-size: normal;
     color: #333;
     background-color: white;

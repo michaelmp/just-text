@@ -1,0 +1,51 @@
+!resume-name:
+  !-- *
+
+!resume-contact:
+  !center
+    !box
+      !align-center
+        !whitespace
+          *
+
+!resume-statement:
+  !linebreak
+  !strong Personal statement:
+  !linebreak
+  *
+
+!resume-section:
+  !section *
+  !hr
+
+!resume-item:
+  <div class="jt-resume-item">
+  *
+  </div>
+
+!resume-item-position:
+  <div>
+  !strong *
+  </div>
+
+!resume-item-title:
+  <div>
+  !strong *
+  </div>
+
+!resume-item-school: <div class="jt-resume-school"> * </div>
+
+!resume-school-grades:
+  !bullets *
+
+!resume-school-grade:
+  !item
+    !flush-right {!strong @~}
+    _*
+
+!resume-item-where: 
+  !emph *
+
+!resume-item-when: <div class="jt-resume-when"> * </div>
+
+!resume-item-what: <div class="jt-resume-what"> * </div>

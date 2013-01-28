@@ -28,44 +28,47 @@ class Evaluator:
       self.env = self.env.parent
 
   def evaluate(self, expression):
-    try:
+    #try:
       return expression.evaluate(self)
-    except Exception, e:
-      filename = self.env.lookup('__filename__')
-      line = self.env.lookup('__line__')
-      error.fail('"%s" at %s:%s :: "%s"' % \
-        (e, filename, line, expression))
+    #except Exception, e:
+    #  filename = self.env.lookup('__filename__')
+    #  line = self.env.lookup('__line__')
+    #  error.fail('"%s" at %s:%s :: "%s"' % \
+    #    (e, filename, line, expression))
 
   def tokenize(self, line):
     out = []
     block = []
     nest = 0
     line = line.strip()
-    grams = line.split()
+    grams = line.split(' ')
     for word in grams:
       nested = nest > 0
-      if word[0] == '{':
-        if nest == 0:
-          word = word[1:]
-        nest = nest + 1
-        nested = True
-      if len(word) > 0:
-        if word[-1] == '}':
-          nest = nest - 1
+      if len(word) < 1:
+        out.append(noop.NoOp())
+      else: 
+        if word[0] == '{':
           if nest == 0:
-            word = word[:-1]
+            word = word[1:]
+          nest = nest + 1
           nested = True
-        if nested:
-          block.append(word)
-        else:
-          out.append(self.parse_word(word))
+        if len(word) > 0:
+          if word[-1] == '}':
+            nest = nest - 1
+            if nest == 0:
+              word = word[:-1]
+            nested = True
+          if nested:
+            block.append(word)
+          else:
+            out.append(self.parse_word(word))
       if nest == 0:
         if len(block) > 0:
           out.append(self.parse_command(' '.join(block)))
           nest = 0
           block = []
     if nest != 0:
-      error.fail('unbalanced {}')
+      error.fail('unbalanced {} on line: %s' % line)
     return sentence.Sentence(out)
   
   def parse_word(self, word):
@@ -77,9 +80,6 @@ class Evaluator:
   def parse_command(self, line):
     if len(line) == 0:
       return noop.NoOp()
-    #m = re.match(COMMENT, line)
-    #if m:
-    #  return words.Words('')
     m = re.match(DEFINITION, line)
     if m:
       return definition.Definition(m.group(1), m.group(3))
@@ -95,32 +95,33 @@ class Evaluator:
     for line in source.splitlines():
       whitespace = len(line) - len(line.lstrip())
       if whitespace > indent_stack[-1]:
-        grams.append('{')
+        grams.append('{') # begin indent block
         indent_stack.append(whitespace)
       else:
         if re.match(ANY_COMMAND, line):
           while len(multi_stack) > 0:
-            grams.append(multi_stack.pop())
+            grams.append(multi_stack.pop()) # end multi-line context block
           while whitespace < indent_stack[-1]:
             indent_stack.pop()
-            grams.append('}')
+            grams.append('}') # end indent block
       if re.match(ONE_LINE_DEF, line) or re.match(ONE_LINE_CALL, line):
-        grams.append('{')
+        grams.append('{') # begin one-line context block
         grams.extend(line.split())
-        grams.append('}')
+        grams.append('}') # end one-line context block
       elif re.match(MULTI_LINE_DEF, line) or re.match(MULTI_LINE_CALL, line):
-        grams.append('{')
+        grams.append('{') # begin multi-line context block
         grams.extend(line.split())
-        multi_stack.append('}')
+        multi_stack.append('}') # (deferred)
       else:
         grams.extend(line.split())
     while len(multi_stack) > 0:
-      grams.append(multi_stack.pop())
+      grams.append(multi_stack.pop()) # end multi-line context block @ EOF
     while len(indent_stack) > 1:
       indent_stack.pop()
-      grams.append('}')
+      grams.append('}') # end indent block @ EOF
     return ' '.join(grams)
 
   def scan(self, jtstr):
-    b = self.bracketize(jtstr)
-    return self.tokenize(b)
+    bras = self.bracketize(jtstr)
+    #sys.stderr.write(bras)
+    return self.tokenize(bras)

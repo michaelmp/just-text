@@ -3,7 +3,7 @@
 @media print {
 
   .jt-body {
-    font-size: 12pt;
+    font-size: smaller;
     color: black;
   }
 

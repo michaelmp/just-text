@@ -1,0 +1,15 @@
+/* Right-aligned information needs cushion from body text. */
+.jt-resume-when {
+  margin: 0 0 0 2em;
+  float: right;
+}
+
+/* Spacing between consecutive entries. */
+.jt-resume-item + .jt-resume-item {
+  margin-top: 1em;
+}
+
+/* The name of your high-school / alma mater. */
+.jt-resume-school {
+  font-variant: small-caps;
+}

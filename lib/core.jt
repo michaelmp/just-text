@@ -1,3 +1,5 @@
+!end: {} *
+
 !-: <div class="jt-h1"> * </div>
 !--: <div class="jt-h2"> * </div>
 !---: <div class="jt-h3"> * </div>
@@ -42,12 +44,24 @@
 !bf: !strong *
 !b: !strong *
 
-!italic: <span class="jt-italic"> * </span>
+!italic: <em> * </em>
 !italics: !italic *
 !it: !italic *
 !i: !italic *
+!slanted: !italic *
+!emph: !italic *
+!emphasis: !emph *
+!em: !emph *
 
 !style: <span style=" @~  : _@~ "> __* </span>
+
+!align-left: !style text-align left *
+!align-right: !style text-align right *
+!align-center: !style text-align center *
+
+!flush-left: !style float left *
+!flush-right: !style float right *
+
 !font-size: !style font-size @~ _*
 !color: !style color @~ _*
 
@@ -60,7 +74,10 @@
 !colossal: !font-size 200% *
 !brobdignagian: !font-size 300% *
 
-!link: <a href=" @~ "> _* </a>
+!whitespace: !style white-space pre-line *
+
+!link:
+<a href=" @~ "> _* </a>
 
 !pre: <div class="jt-pre"> * </div>
 !verbatim: !pre *
@@ -83,9 +100,12 @@
     !small *
 
 !center: <div class="jt-center"> * </div>
-!linebreak: <br/>
+!linebreak: <br/> *
+!line:
+  *
+  !linebreak
 !pagebreak: <div class="jt-pagebreak"></div> *
-!hr: <hr/>
+!hr: <hr class="jt-hr"> *
 
 !bang: &#33; *
 !lcurl: &#65371;
