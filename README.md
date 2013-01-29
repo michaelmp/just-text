@@ -1,10 +1,11 @@
 just-text
 =========
 
-A text/plain syntax for generating pretty HTML documents.
+A language for generating pretty HTML documents from plain text.
 
 Features:
-* Simple markup syntax. Programmability:
+* Simple markup syntax.
+* Programmability:
 
     ```
     !myfunction: Hello world!
