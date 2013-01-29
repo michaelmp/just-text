@@ -5,8 +5,12 @@ A text/plain syntax for generating pretty HTML documents.
 
 Features:
 * Simple markup syntax.
-    !myfunction: Hello world!
-    !myfunction
+
+```
+!myfunction: Hello world!
+```
+Invoking `!myfunction` outputs `Hello world!`.
+
 * Generates HTML for `screen` and `print` media.
 
 Goals:
