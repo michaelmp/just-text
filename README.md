@@ -1,16 +1,18 @@
 just-text
 =========
 
-Similar to Restructured Text and Markdown, just-text converts plain text to HTML.
-Dissimilar to those programs, just-text aims to format literary texts
-(as opposed to technical texts, which use bullets, code blocks, hyperlinks, etc.).
+A text/plain syntax for generating pretty HTML documents.
+
+Features:
+* Simple markup syntax. Bang with colon: `!myfunction: Hello world!` defines a function. Bang without colon: `!myfunction` invokes the function.
+* Generates HTML for `screen` and `print` media.
 
 Goals:
-* Simple, intuitive markup syntax.
-* Generate screen and print-quality HTML documents with CSS.
-* Support for pagination, page breaks.
-* Readability.
-* Inline HTML for everything else.
+* Cross-references.
+* Smart pagination.
+* Support for books, resumes, and technical documents.
+
+---
 
 Usage:
 ```sh
