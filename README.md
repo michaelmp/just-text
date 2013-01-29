@@ -4,7 +4,9 @@ just-text
 A text/plain syntax for generating pretty HTML documents.
 
 Features:
-* Simple markup syntax. Bang with colon: `!myfunction: Hello world!` defines a function. Bang without colon: `!myfunction` invokes the function.
+* Simple markup syntax.
+    !myfunction: Hello world!
+    !myfunction
 * Generates HTML for `screen` and `print` media.
 
 Goals:
