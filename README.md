@@ -4,12 +4,11 @@ just-text
 A text/plain syntax for generating pretty HTML documents.
 
 Features:
-* Simple markup syntax.
+* Simple markup syntax. Programmability:
 
-```
-!myfunction: Hello world!
-```
-Invoking `!myfunction` outputs `Hello world!`.
+    ```
+    !myfunction: Hello world!
+    ```
 
 * Generates HTML for `screen` and `print` media.
 
