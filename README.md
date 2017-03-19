@@ -1,7 +1,7 @@
 just-text
 =========
 
-A language for generating pretty HTML documents from plain text.
+A markup language for generating pretty HTML documents from plain text.
 
 Features:
 * Simple markup syntax.
